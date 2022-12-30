@@ -6,10 +6,8 @@ node_modules
 # testing
 coverage
 
-# next.js
-.next/
-out/
-build
+# 构建产物
+dist
 
 # misc
 .DS_Store
