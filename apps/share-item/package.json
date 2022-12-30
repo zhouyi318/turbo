@@ -1,0 +1,22 @@
+{
+  "name": "share-item",
+  "version": "1.0.0",
+  "private": true,
+  "author":"mskj-zhouyi <zhouyi@mskj.com>",
+  "scripts": {
+    "dev": "umi dev PORT=8001",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "umi": "^4.0.41",
+    "utils":"*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^4.1.2"
+  }
+}

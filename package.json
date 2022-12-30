@@ -1,0 +1,27 @@
+{
+  "name": "wework",
+  "version": "1.0.0",
+  "description": "民生工作室",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "eslint-config-custom": "*",
+    "prettier": "^2.8.1",
+    "turbo": "^1.6.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "author": "周毅",
+  "license": "ISC"
+}
