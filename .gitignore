@@ -27,3 +27,6 @@ yarn-error.log*
 
 # turbo
 .turbo
+
+#缓存
+**.lock
