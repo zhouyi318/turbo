@@ -2,21 +2,22 @@
   "name": "share-item",
   "version": "1.0.0",
   "private": true,
-  "author":"mskj-zhouyi <zhouyi@mskj.com>",
+  "author": "zhouyi <zhouyi@mskj.com>",
   "scripts": {
-    "dev": "umi dev PORT=8001",
+    "dev": "cross-env PORT=9999 umi dev",
     "build": "umi build",
     "postinstall": "umi setup",
-    "setup": "umi setup",
     "start": "npm run dev"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
+    "vue": "^3.2.36",
     "umi": "^4.0.41",
-    "utils":"*"
+    "utils": "*",
+    "vue-ui": "*"
   },
   "devDependencies": {
-    "@types/react": "^18.0.0",
-    "@types/react-dom": "^18.0.0",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "@umijs/preset-vue": "^4.0.41"
   }
 }

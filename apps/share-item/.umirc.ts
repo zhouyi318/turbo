@@ -2,8 +2,9 @@ import { defineConfig } from "umi";
 
 export default defineConfig({
   npmClient: 'yarn',
-  outputPath: '../../dist/share',
   base: '/share/',
   publicPath: '/share/',
+  outputPath: '../../dist/share',
   hash: true,
+  presets: [require.resolve('@umijs/preset-vue')],
 });

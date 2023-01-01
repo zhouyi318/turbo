@@ -5,5 +5,8 @@
     "scripts": {
         "lint": "TIMING=1 eslint \"**/*.ts*\""
     },
-    "devDependencies": {}
+    "devDependencies": {},
+    "dependencies": {
+        "lodash": "^4.17.21"
+    }
 }
