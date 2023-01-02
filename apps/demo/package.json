@@ -1,6 +1,8 @@
 {
-  "name": "@example/boilerplate-vue",
+  "name": "demo",
+  "version": "1.0.0",
   "private": true,
+  "author": "mskj-zhouyi <zhouyi@mskj.com>",
   "scripts": {
     "build": "umi build",
     "ci": "cypress run",
