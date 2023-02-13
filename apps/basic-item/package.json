@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "pinia": "^2.0.30",
     "utils": "*",
     "vant": "^4.0.10",
     "vue": "^3.2.13",
@@ -24,6 +25,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
+    "mockjs": "^1.1.0",
     "unplugin-vue-components": "^0.23.0"
   },
   "eslintConfig": {
