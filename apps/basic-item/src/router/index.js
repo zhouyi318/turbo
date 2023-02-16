@@ -1,18 +1,10 @@
-/*
- * @Author: mskj-zhouyi
- * @Date: 2023-02-03 16:01:24
- * @LastEditors: mskj-zhouyi
- * @LastEditTime: 2023-02-03 21:27:20
- * @FilePath: /turbo/apps/basic-item/src/router.js
- * @Description: vant官网 - https://vant-contrib.gitee.io/vant/#/zh-CN/home
- */
 import { createRouter, createWebHistory } from 'vue-router';
 
 const routes = [
     {
-        path: '/',
+        path: '/basic',
         name: 'home',
-        component: () => import('./view/home'),
+        component: () => import('../views/home/index.vue'),
         meta: {
             title: '民生工作室',
         },
@@ -20,7 +12,7 @@ const routes = [
     {
         path: '/morning',
         name: 'morning',
-        component: () => import('./view/morning'),
+        component: () => import('../views/morning/index.vue'),
         meta: {
             title: '发早报',
         },
@@ -28,7 +20,7 @@ const routes = [
     {
         path: '/produce',
         name: 'produce',
-        component: () => import('./view/produce'),
+        component: () => import('../views/produce/index.vue'),
         meta: {
             title: '发产品',
         },
@@ -36,7 +28,7 @@ const routes = [
     {
         path: '/poster',
         name: 'poster',
-        component: () => import('./view/poster'),
+        component: () => import('../views/poster/index.vue'),
         meta: {
             title: '发海报',
         },
@@ -44,7 +36,7 @@ const routes = [
     {
         path: '/information',
         name: 'information',
-        component: () => import('./view/information'),
+        component: () => import('../views/information/index.vue'),
         meta: {
             title: '发资讯',
         },
@@ -52,7 +44,7 @@ const routes = [
     {
         path: '/stock_customer',
         name: 'stock-customer',
-        component: () => import('./view/stock-customer'),
+        component: () => import('../views/stock-customer/index.vue'),
         meta: {
             title: '我的客户',
         },
@@ -60,7 +52,7 @@ const routes = [
     {
         path: '/lossing_customer',
         name: 'lossing-customer',
-        component: () => import('./view/lossing-customer'),
+        component: () => import('../views/lossing-customer/index.vue'),
         meta: {
             title: '流失客户',
         },
@@ -68,7 +60,7 @@ const routes = [
     {
         path: '/customer_radar',
         name: 'customer-radar',
-        component: () => import('./view/customer-radar'),
+        component: () => import('../views/customer-radar/index.vue'),
         meta: {
             title: '客户雷达',
         },
@@ -76,7 +68,7 @@ const routes = [
     {
         path: '/add_friends',
         name: 'add-friends',
-        component: () => import('./view/add-friends'),
+        component: () => import('../views/add-friends/index.vue'),
         meta: {
             title: '添加管护好友',
         },
@@ -84,7 +76,7 @@ const routes = [
     {
         path: '/customer_certification',
         name: 'customer-certification',
-        component: () => import('./view/customer-certification'),
+        component: () => import('../views/customer-certification/index.vue'),
         meta: {
             title: '手动认证客户',
         },
@@ -92,7 +84,7 @@ const routes = [
     {
         path: '/pull_group',
         name: 'pull-group',
-        component: () => import('./view/pull-group'),
+        component: () => import('../views/pull-group/index.vue'),
         meta: {
             title: '一键拉群',
         },
@@ -100,7 +92,7 @@ const routes = [
     {
         path: '/group_chat',
         name: 'group-chat',
-        component: () => import('./view/group-chat'),
+        component: () => import('../views/group-chat/index.vue'),
         meta: {
             title: '企微群聊',
         },
@@ -108,7 +100,7 @@ const routes = [
     {
         path: '/identity_authentication',
         name: 'identity-authentication',
-        component: () => import('./view/identity-authentication'),
+        component: () => import('../views/identity-authentication/index.vue'),
         meta: {
             title: '员工身份信息',
         },
@@ -116,7 +108,7 @@ const routes = [
     {
         path: '/my_task',
         name: 'my-task',
-        component: () => import('./view/my-task'),
+        component: () => import('../views/my-task/index.vue'),
         meta: {
             title: '我的任务',
         },
@@ -124,7 +116,7 @@ const routes = [
     {
         path: '/backlog',
         name: 'backlog',
-        component: () => import('./view/backlog'),
+        component: () => import('../views/backlog/index.vue'),
         meta: {
             title: '待办事项',
         },
@@ -132,7 +124,7 @@ const routes = [
     {
         path: '/historical_friends',
         name: 'historical-friends',
-        component: () => import('./view/historical-friends'),
+        component: () => import('../views/historical-friends/index.vue'),
         meta: {
             title: '历史朋友圈',
         },
@@ -152,4 +144,4 @@ router.beforeEach((to, from, next) => {
     next();
 });
 
-export { router };
+export default router;

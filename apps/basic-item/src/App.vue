@@ -1,9 +1,9 @@
 <!--
- * @Author: mskj-zhouyi zhouyi@mskj.com
- * @Date: 2023-02-03 15:45:13
- * @LastEditors: mskj-zhouyi
- * @LastEditTime: 2023-02-09 16:11:59
- * @FilePath: /turbo/apps/basic-item/src/App.vue
+ * @Author: 周毅
+ * @Date: 2023-02-13 16:39:50
+ * @LastEditors: mskj-zhouyi zhouyi@mskj.com
+ * @LastEditTime: 2023-02-13 19:51:03
+ * @FilePath: /wework/apps/basic-item/src/App.vue
 -->
 <template>
   <div id="app">
@@ -16,7 +16,6 @@ import {login} from 'utils';
 
 export default {
   created() {
-    console.log(`created`)
     login()
   },
   // beforeMount(){
@@ -40,21 +39,6 @@ export default {
   // errorCaptured(){
   //   console.log(`errorCaptured`)
   // },
-  // renderTracked(){
-  //   console.log(`renderTracked`)
-  // },
-  // renderTriggered(){
-  //   console.log(`renderTriggered`)
-  // },
-  // activated(){
-  //   console.log(`activated`)
-  // },
-  // deactivated(){
-  //   console.log(`deactivated`)
-  // },
-  // serverPrefetch(){
-  //   console.log(`serverPrefetch`)
-  // }
 }
 </script>
 
