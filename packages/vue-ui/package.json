@@ -1,9 +1,0 @@
-{
-    "name": "vue-ui",
-    "version": "1.0.0",
-    "main": "index.js",
-    "scripts": {
-        "lint": "TIMING=1 eslint \"**/*.ts*\""
-    },
-    "devDependencies": {}
-}
