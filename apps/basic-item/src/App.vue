@@ -1,9 +1,9 @@
 <!--
  * @Author: 周毅
  * @Date: 2023-02-13 16:39:50
- * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-13 19:51:03
- * @FilePath: /wework/apps/basic-item/src/App.vue
+ * @LastEditors: mskj-zhouyi
+ * @LastEditTime: 2023-02-16 16:59:30
+ * @FilePath: /turbo/apps/basic-item/src/App.vue
 -->
 <template>
   <div id="app">
@@ -12,18 +12,18 @@
 </template>
 
 <script>
-import {login} from 'utils';
+import { login } from "utils";
 
 export default {
   created() {
-    login()
+    login();
   },
   // beforeMount(){
   //   console.log(`beforeMount`)
   // },
   // mounted(){
   //   console.log(`mounted`)
-  // },  
+  // },
   // beforeUpdate(){
   //   console.log(`beforeUpdate`)
   // },
@@ -39,7 +39,7 @@ export default {
   // errorCaptured(){
   //   console.log(`errorCaptured`)
   // },
-}
+};
 </script>
 
 <style>
