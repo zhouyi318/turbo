@@ -1,9 +1,9 @@
 /*
  * @Author: mskj-zhouyi
  * @Date: 2023-02-03 17:07:27
- * @LastEditors: mskj-zhouyi
- * @LastEditTime: 2023-02-17 12:23:50
- * @FilePath: /turbo/packages/utils/request.js
+ * @LastEditors: mskj-zhouyi zhouyi@mskj.com
+ * @LastEditTime: 2023-02-17 19:13:15
+ * @FilePath: /wework/packages/utils/request.js
  * @Description: umi-request 官网 - https://github.com/umijs/umi-request
  */
 import axios from "axios";
@@ -103,9 +103,7 @@ class AxiosUtil {
 			.then(loadinghandler.satrt(loading))
 			.then(() => this.extendRequest(method, url, data))
 			.then(loadinghandler.end(loading))
-			.then((res) => {
-				console.log(22222, res)
-			})
+			.then(({ data }) => data)
 			.catch(errorHandler);
 	}
 
@@ -147,47 +145,3 @@ class AxiosUtil {
 
 const $http = new AxiosUtil();
 export default $http;
-
-
-
-// // request 请求包装
-// const weworkRequest = extend({
-//     method:'post',
-//     prefix: '/',
-//     timeout: 1000,
-//     headers: {
-//         'Content-Type': 'multipart/form-data',
-//     },
-// });
-
-// const weworkRequest1 = ({ method = 'post', url, params = {}, loading = true }) => {
-
-//     // if (!url) {
-//     //     return showFailToast('错误：请求地址"URL"为空！');
-//     // }
-
-//     const initParams = {
-//         method,
-//         errorHandler, // 默认错误处理
-//         credentials: 'include', // 默认请求是否带上cookie
-//         prefix: baseUrl, //统一添加/api请求前缀
-//         headers: {
-//             'Content-Type': 'application/json;charset=UTF-8'
-//         },
-//     };
-
-//     if (method === 'get') {
-//         initParams.params = params;
-//     } else {
-//         initParams.data = params;
-//     }
-
-//     const extendRequest = extend({ ...initParams });
-
-//     return Promise.resolve()
-//         .then(loadinghandler.request(loading))
-//         .then(() => extendRequest())
-//         .then(loadinghandler.response(loading))
-//         .then(({ response }) => response)
-//         .catch(errorHandler);
-// };

@@ -1,9 +1,9 @@
 <!--
  * @Author: 周毅
  * @Date: 2023-02-13 16:39:50
- * @LastEditors: mskj-zhouyi
- * @LastEditTime: 2023-02-16 16:59:30
- * @FilePath: /turbo/apps/basic-item/src/App.vue
+ * @LastEditors: mskj-zhouyi zhouyi@mskj.com
+ * @LastEditTime: 2023-02-17 16:27:54
+ * @FilePath: /wework/apps/basic-item/src/App.vue
 -->
 <template>
   <div id="app">
@@ -15,9 +15,9 @@
 import { login } from "utils";
 
 export default {
-  created() {
-    login();
-  },
+  // created() {
+  //   console.log(`created`)
+  // },
   // beforeMount(){
   //   console.log(`beforeMount`)
   // },

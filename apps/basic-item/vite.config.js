@@ -1,9 +1,9 @@
 /*
  * @Author: 周毅
  * @Date: 2023-02-13 16:39:50
- * @LastEditors: mskj-zhouyi
- * @LastEditTime: 2023-02-16 15:16:32
- * @FilePath: /turbo/apps/basic-item/vite.config.js
+ * @LastEditors: mskj-zhouyi zhouyi@mskj.com
+ * @LastEditTime: 2023-02-17 18:56:08
+ * @FilePath: /wework/apps/basic-item/vite.config.js
  */
 import { fileURLToPath, URL } from "node:url";
 import { defineConfig, loadEnv } from "vite";
@@ -12,7 +12,6 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import { viteMockServe } from "vite-plugin-mock";
 import Components from "unplugin-vue-components/vite";
 import { VantResolver } from "unplugin-vue-components/resolvers";
-
 /**
  * vite配置文档：https://vitejs.dev/config/
  * vant配置文档：https://vant-contrib.gitee.io/vant/#/zh-CN/quickstart
@@ -32,6 +31,7 @@ export default defineConfig(async ({ command, mode }) => {
       }),
       viteMockServe({
         mockPath: "./mock/",
+        localEnabled: command === "serve",
         watchFiles: true,
       }),
     ],
