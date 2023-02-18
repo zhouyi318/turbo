@@ -1,0 +1,35 @@
+# IDE
+.idea
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+lib-cov
+coverage
+.grunt
+.lock-wscript
+build/Release
+
+#node js
+/node_modules
+
+# output
+/dist
+
+#placeholder
+.placeholder
+
+# others
+/platforms
+/bower_components
+*.keystore
+npm-debug.log.*
+package-lock.json
+yarn.lock
+webpackConfig.json

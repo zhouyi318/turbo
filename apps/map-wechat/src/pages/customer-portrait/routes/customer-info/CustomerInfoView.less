@@ -1,0 +1,186 @@
+.noDataStyle {
+  height: 100%;
+  background: #fff;
+  text-align: center;
+  font-size: 24px;
+  color: #666;
+  position: relative;
+
+  &-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
+
+.customer-info-view {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  box-sizing: border-box;
+
+  &-header {
+    background: #fff;
+    padding: 50px 30px;
+    display: flex;
+
+    &-img {
+      img {
+        width: 120px;
+        height: 120px;
+        border-radius: 10px;
+      }
+    }
+
+    &-info {
+      flex: 1;
+      padding: 10px 40px;
+
+      > div:first-child {
+        font-size: 40px;
+        font-weight: 500;
+        color: #333;
+      }
+
+      > div:last-child {
+        font-size: 28px;
+        color: #999;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &-remark {
+    :global {
+      .am-list-item .am-list-line .am-list-content {
+        font-size: 28px;
+      }
+    }
+  }
+
+  &-nodata {
+    height: calc(~'100vh - 60PX - 50PX - 9PX - 100px');
+    background: #fff;
+    text-align: center;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-title {
+      text-align: center;
+      font-size: 24px;
+      color: #666;
+    }
+  }
+
+  &-tag {
+    background: #fff;
+    padding: 30px 10px 0 10px;
+
+    &-title {
+      font-size: 28px;
+      margin-left: 20px;
+    }
+
+    &-list {
+      margin-top: 30px;
+
+      &-item {
+        font-size: 24px;
+        padding: 14px 20px;
+        background: #edf3ff;
+        color: #4080ef;
+        margin-bottom: 30px;
+        margin-left: 20px;
+      }
+    }
+  }
+
+  &-tabs {
+    :global {
+      .am-tabs-default-bar-tab {
+        font-size: 30px;
+      }
+
+      .am-list-content {
+        > span {
+          font-size: 28px;
+          color: #333;
+        }
+
+        > span:first-child {
+          display: inline-block;
+          width: 220px;
+        }
+      }
+    }
+  }
+
+  &-drawer {
+    font-size: 28px;
+    background: #fff;
+    overflow-y: scroll;
+
+    :global {
+      .am-list-item .am-input-control input {
+        font-size: 28px;
+      }
+    }
+
+    &-title {
+      height: 80px;
+      line-height: 80px;
+      font-size: 28px;
+      color: #333;
+      display: flex;
+      position: relative;
+
+      > div:first-child {
+        text-align: center;
+        margin-left: 80px;
+        flex: 1;
+      }
+
+      > div:last-child {
+        width: 80px;
+        text-align: center;
+
+        svg {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    &-title::after {
+      content: '';
+      height: 1px;
+      width: 100%;
+      background: #e8e8e8;
+      position: absolute;
+      bottom: 0;
+    }
+
+    &-main {
+      padding: 14px 30px 0 30px;
+
+      &-item {
+        > div:first-child {
+          padding: 30px 0 20px 0;
+        }
+      }
+
+      &-btn {
+        padding: 30px 0;
+      }
+
+      :global {
+        .am-input-item,
+        .am-textarea-item {
+          border-radius: 8px;
+          background: #f0f0f0;
+        }
+      }
+    }
+  }
+}

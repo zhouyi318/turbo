@@ -1,0 +1,63 @@
+.layout {
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  overflow-y: scroll;
+
+  &-content {
+    flex: 1;
+    overflow: auto;
+    background-color: #fff;
+  }
+}
+
+.errorBoundary {
+  font-size: 32px;
+  background: #fff;
+  padding: 0 30px;
+
+  .errorImg {
+    height: 300px;
+    width: 100%;
+  }
+
+  .errorTitle {
+    height: 90px;
+    line-height: 90px;
+    color: #666;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .errorInfo {
+    height: calc(~'100% - 600px');
+    overflow: auto;
+    font-size: 14px;
+    color: #999;
+  }
+
+  .errorMessage {
+    height: 90px;
+    line-height: 90px;
+  }
+
+  .errorBtn {
+    display: flex;
+    text-align: center;
+    height: 90px;
+    line-height: 90px;
+
+    div {
+      flex: 1;
+
+      span {
+        padding: 8px 56px;
+        border: 1px solid rgba(52, 121, 223, 1);
+        border-radius: 6px;
+        font-size: 32px;
+        color: rgba(52, 121, 223, 1);
+      }
+    }
+  }
+}
