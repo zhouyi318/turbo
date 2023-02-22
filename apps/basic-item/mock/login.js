@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-17 17:37:44
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-17 19:37:52
+ * @LastEditTime: 2023-02-22 20:19:08
  * @FilePath: /wework/apps/basic-item/mock/login.js
  */
 // 获取系统参数配置
@@ -41,7 +41,7 @@ export default [
     response: Config,
   },
   {
-    url: "/api/getUsers",
+    url: "/api/getRankingList",
     method: "post",
     response: Login,
   },
