@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-17 17:37:44
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-22 20:19:08
+ * @LastEditTime: 2023-02-23 10:59:59
  * @FilePath: /wework/apps/basic-item/mock/login.js
  */
 // 获取系统参数配置
@@ -23,15 +23,25 @@ const Config = {
 
 // 登录
 let Login = {
-  CUST_AVATAR:
-    "https://wework.qpic.cn/wwpic/934058_GuYtgdwcQAODVvD_1675943435/0",
   MSG: "交易成功",
-  CUST_DEPT_NAME: "总行网络金融部",
+  empId: "MSKJ001011",
+  AGENT_ID: "1000105",
+  empMobile: "15655596667",
+  QW_USER_ID: "mskj-zhouyi",
+  SHOP_ID: "",
+  CORP_USER_UUID:
+    "eyJjb3JwSWQiOiJ3dzUxYWIzOGRkYjlmN2Y2MGQiLCJxd1VzZXJJZCI6Im1za2otemhvdXlpIiwidXVpZCI6ImJlZTk4N2UzMWYzNTQ2ZTRhZjVjNTRhMDk5ZGVmZTY2In0=",
+  CORP_ID: "ww51ab38ddb9f7f60d",
+  AUTH_FLAG: 0,
+  qwMobile: "15655596667",
   STATUS: "1",
-  CUST_IDX_VALUE: 0,
-  CUST_RANKING: 0,
-  CUST_USER_NAME: "周毅",
-  WE_IDX_WE_LIST: [],
+  empName: "周毅",
+  AVATAR: "https://wework.qpic.cn/wwpic/934058_GuYtgdwcQAODVvD_1675943435/0",
+  // isBindEmp: "1",
+  // isBindEmpMsg: "员工已认证。",
+  isBindEmp: "0",
+  isBindEmpMsg: "没有查到[mskj-zhouyi]的员工号，请手动提交员工号。",
+  IS_AUTH: "0",
 };
 
 export default [
@@ -41,7 +51,7 @@ export default [
     response: Config,
   },
   {
-    url: "/api/getRankingList",
+    url: "/api/qyWxlogin",
     method: "post",
     response: Login,
   },

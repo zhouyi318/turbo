@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-17 14:44:33
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-22 22:26:32
+ * @LastEditTime: 2023-02-23 10:59:33
  * @FilePath: /wework/apps/basic-item/src/router/index.js
  */
 import { createRouter, createWebHistory } from "vue-router";
@@ -170,6 +170,15 @@ const routes = [
     name: "login",
     component: () => import("@/views/login/index.vue"),
     meta: {
+      hidden: true,
+    },
+  },
+  {
+    path: "/check",
+    name: "check",
+    component: () => import("@/views/check/index.vue"),
+    meta: {
+      title: "身份认证",
       hidden: true,
     },
   },
