@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-17 17:37:44
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-23 10:59:59
+ * @LastEditTime: 2023-02-27 22:59:33
  * @FilePath: /wework/apps/basic-item/mock/login.js
  */
 // 获取系统参数配置
@@ -37,11 +37,17 @@ let Login = {
   STATUS: "1",
   empName: "周毅",
   AVATAR: "https://wework.qpic.cn/wwpic/934058_GuYtgdwcQAODVvD_1675943435/0",
-  // isBindEmp: "1",
-  // isBindEmpMsg: "员工已认证。",
-  isBindEmp: "0",
-  isBindEmpMsg: "没有查到[mskj-zhouyi]的员工号，请手动提交员工号。",
+  isBindEmp: "1",
+  isBindEmpMsg: "员工已认证。",
+  // isBindEmp: "0",
+  // isBindEmpMsg: "没有查到[mskj-zhouyi]的员工号，请手动提交员工号。",
   IS_AUTH: "0",
+};
+
+const AgentTicket = {
+  signature: "da0bdbaa52e49a1eda4afe8ee03b475bc525fb57",
+  nonceStr: "mOiQecR6LV",
+  timestamp: 1677490974,
 };
 
 export default [
@@ -54,5 +60,10 @@ export default [
     url: "/api/qyWxlogin",
     method: "post",
     response: Login,
+  },
+  {
+    url: "/api/getAgentTicket",
+    method: "post",
+    response: AgentTicket,
   },
 ];

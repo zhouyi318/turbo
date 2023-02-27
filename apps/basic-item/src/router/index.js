@@ -2,11 +2,11 @@
  * @Author: 周毅
  * @Date: 2023-02-17 14:44:33
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-23 10:59:33
+ * @LastEditTime: 2023-02-27 17:46:47
  * @FilePath: /wework/apps/basic-item/src/router/index.js
  */
 import { createRouter, createWebHistory } from "vue-router";
-import { useUserInfoStore } from "@/stores/user.js";
+import { useUserInfoStore } from "@/stores/login.js";
 import { storage } from "utils";
 
 const Layout = () => import("@/components/Layout/index.vue");

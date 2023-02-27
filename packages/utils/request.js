@@ -2,7 +2,7 @@
  * @Author: mskj-zhouyi
  * @Date: 2023-02-03 17:07:27
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-17 19:13:15
+ * @LastEditTime: 2023-02-27 19:58:41
  * @FilePath: /wework/packages/utils/request.js
  * @Description: umi-request 官网 - https://github.com/umijs/umi-request
  */
@@ -82,7 +82,7 @@ class AxiosUtil {
 	constructor() {
 		this.http = axios.create({
 			baseURL: baseUrl,
-			timeout: 3000,
+			timeout: 60000,
 		})
 		this.addInterceptors();
 	}
@@ -109,11 +109,13 @@ class AxiosUtil {
 
 	// POST 请求
 	post(url, data, loading = true) {
+		console.log(`%cPOST请求：${url}\n请求参数：${JSON.stringify(data)}`, 'color:#070;font-size:16px')
 		return this.request("post", url, data, loading);
 	}
 
 	// GET 请求
 	get(url, data, loading = true) {
+		console.log(`%c GET请求：${url},参数：${JSON.stringify(data)}`, 'color:#070;font-size:16px');
 		return this.request("get", url, data, loading);
 	}
 
