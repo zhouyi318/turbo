@@ -1,31 +1,33 @@
 <!--
  * @Author: mskj-zhouyi zhouyi@mskj.com
  * @Date: 2023-02-01 18:21:19
- * @LastEditors: mskj-zhouyi
- * @LastEditTime: 2023-02-17 12:09:45
+ * @LastEditors: Zhou Yi
+ * @LastEditTime: 2023-02-28 23:18:42
  * @FilePath: /turbo/apps/basic-item/src/views/home/index.vue
 -->
 <template>
-  <h2>首页 - home</h2>
-<button @click="onAdd">+onAdd</button>
+  <van-swipe class="my-swipe" :loop="false" indicator-color="white">
+    <van-swipe-item>1</van-swipe-item>
+    <van-swipe-item>2</van-swipe-item>
+    <van-swipe-item>3</van-swipe-item>
+    <van-swipe-item>4</van-swipe-item>
+  </van-swipe>
 </template>
 
-<script>
-// import { request } from "utils";
-import { $http } from "utils";
-export default {
-  methods: {
-    onAdd() {
-      console.log("request");
-      $http
-        .post("/getUsers")
-        .then((res) => {
-          console.log("在console中看到数据", res); //在console中看到数据
-        })
-        .catch((res) => {
-          console.log("在console中看到数据", res); //在console中看到数据
-        });
-    },
-  },
-};
+<script setup>
+import { ref, onMounted } from "vue";
+import { useHomeStore } from "@/stores/home.js";
+
+const store = useHomeStore();
+onMounted(async () => {
+  await store.getMenuList();
+});
 </script>
+
+<style>
+.my-swipe .van-swipe-item {
+  width: 100%;
+  height: 260px;
+  background-color: #39a9ed;
+}
+</style>

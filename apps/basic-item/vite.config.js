@@ -1,8 +1,8 @@
 /*
  * @Author: 周毅
  * @Date: 2023-02-13 16:39:50
- * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-17 18:56:08
+ * @LastEditors: Zhou Yi
+ * @LastEditTime: 2023-02-28 21:57:56
  * @FilePath: /wework/apps/basic-item/vite.config.js
  */
 import { fileURLToPath, URL } from "node:url";
@@ -55,6 +55,7 @@ export default defineConfig(async ({ command, mode }) => {
   let devConfig = {};
   if (command === "serve") {
     devConfig.server = {};
+    devConfig.server.host = "localhost";
     devConfig.server.port = 8888;
     devConfig.server.cors = true;
     devConfig.server.proxy = {
