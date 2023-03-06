@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-23 11:00:31
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-27 22:55:33
+ * @LastEditTime: 2023-03-01 20:05:45
  * @FilePath: /wework/apps/basic-item/mock/check.js
  */
 // 获取短信验证码

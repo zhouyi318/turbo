@@ -1,17 +1,25 @@
 <!--
  * @Author: mskj-zhouyi zhouyi@mskj.com
  * @Date: 2023-02-01 18:21:19
- * @LastEditors: Zhou Yi
- * @LastEditTime: 2023-02-28 23:18:42
- * @FilePath: /turbo/apps/basic-item/src/views/home/index.vue
+ * @LastEditors: mskj-zhouyi zhouyi@mskj.com
+ * @LastEditTime: 2023-03-01 22:24:59
+ * @FilePath: /wework/apps/basic-item/src/views/home/index.vue
 -->
 <template>
-  <van-swipe class="my-swipe" :loop="false" indicator-color="white">
-    <van-swipe-item>1</van-swipe-item>
-    <van-swipe-item>2</van-swipe-item>
-    <van-swipe-item>3</van-swipe-item>
-    <van-swipe-item>4</van-swipe-item>
-  </van-swipe>
+  <div class="home">
+    <div class="home-nodata" v-if="store.menuTotal === 0">HHHHHHH</div>
+    <div class="home-header" v-else>
+      <van-swipe
+        class="home-header-swipe"
+        indicator-color="white"
+        :loop="false"
+      >
+        <van-swipe-item>2</van-swipe-item>
+        <van-swipe-item>3</van-swipe-item>
+        <van-swipe-item>4</van-swipe-item>
+      </van-swipe>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -20,14 +28,10 @@ import { useHomeStore } from "@/stores/home.js";
 
 const store = useHomeStore();
 onMounted(async () => {
-  await store.getMenuList();
+  store.menuTotal === 0 && (await store.getMenuList());
 });
 </script>
 
-<style>
-.my-swipe .van-swipe-item {
-  width: 100%;
-  height: 260px;
-  background-color: #39a9ed;
-}
+<style lang="less">
+@import url("./style.less");
 </style>

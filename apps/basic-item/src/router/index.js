@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-17 14:44:33
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-27 17:46:47
+ * @LastEditTime: 2023-03-01 21:52:22
  * @FilePath: /wework/apps/basic-item/src/router/index.js
  */
 import { createRouter, createWebHistory } from "vue-router";
@@ -160,6 +160,15 @@ const routes = [
         component: () => import("@/views/historical-friends/index.vue"),
         meta: {
           title: "历史朋友圈",
+          requireAuth: true,
+        },
+      },
+      {
+        path: "manager",
+        name: "manager",
+        component: () => import("@/views/manager/index.vue"),
+        meta: {
+          title: "我的",
           requireAuth: true,
         },
       },
