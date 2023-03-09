@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-03-09 15:03:23
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-09 16:00:33
+ * @LastEditTime: 2023-03-09 17:14:11
  * @FilePath: /wework/apps/basic-item/mock/customer_radar.js
  */
 const radarList = {

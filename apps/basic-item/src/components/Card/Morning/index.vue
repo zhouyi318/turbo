@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-03-08 21:18:44
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-09 14:51:35
+ * @LastEditTime: 2023-03-09 17:56:31
  * @FilePath: /wework/apps/basic-item/src/components/Card/Morning/index.vue
 -->
 
@@ -20,7 +20,12 @@
         <img :src="getImageUrl('morning_icon.png')" alt="logo" />
         <div>&nbsp;|&nbsp;{{ date }}</div>
       </div>
-      <van-swipe :autoplay="3000" :show-indicators="false">
+      <van-swipe
+        :autoplay="5000"
+        :show-indicators="false"
+        vertical
+        style="height: 98px"
+      >
         <van-swipe-item v-for="item in store.articleList" :key="item.OpenId">
           <div class="morning-card-main-item">
             <van-text-ellipsis
@@ -33,9 +38,9 @@
       <div class="morning-card-main-shares">
         已有&nbsp;{{ $string.thousandth(store.shareData) }}&nbsp;位同事分享
       </div>
-      <van-button round size="small" type="primary" @click="onShare"
-        >分享</van-button
-      >
+      <van-button round size="small" type="primary" @click="onShare">
+        分享
+      </van-button>
     </div>
   </div>
 </template>

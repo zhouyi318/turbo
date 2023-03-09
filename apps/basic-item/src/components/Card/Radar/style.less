@@ -2,12 +2,83 @@
  * @Author: 周毅
  * @Date: 2023-03-08 21:19:02
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-09 10:39:24
+ * @LastEditTime: 2023-03-09 21:16:46
  * @FilePath: /wework/apps/basic-item/src/components/Card/Radar/style.less
  */
 .radar-card {
   box-sizing: border-box;
-  &-nodata{
+
+  &-nodata {
     padding: 10px 0;
+  }
+
+  &-main {
+    box-sizing: border-box;
+
+    &-title {
+      display: flex;
+      padding: 15px 4px 10px 4px;
+
+      img {
+        width: 60px;
+      }
+
+      div {
+        font-size: 12px;
+      }
+    }
+
+    &-row {
+      padding: 0 10px;
+
+      &-user {
+        height: 60px;
+
+        >div {
+          font-size: 14px;
+        }
+
+        >div:first-child {
+          height: 18px;
+          display: flex;
+          color: #666;
+          font-size: 14px;
+
+          img {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+          }
+        }
+
+        >div:last-child {
+          height: 14px;
+          font-size: 12px;
+          color: #999;
+        }
+      }
+    }
+
+    &-prompt {
+      font-size: 14px;
+      color: #666;
+      padding-bottom: 15px;
+      text-align: center;
+    }
+
+    .van-button {
+      text-align: left;
+      width: 100px;
+      margin-left: 10px;
+    }
+
+    .van-empty {
+      padding: 0;
+
+      .van-empty__bottom {
+        width: 100%;
+        margin-top: 6px;
+      }
+    }
   }
 }
