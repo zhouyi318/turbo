@@ -2,15 +2,14 @@
  * @Author: 周毅
  * @Date: 2023-02-22 19:31:46
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-08 21:04:45
+ * @LastEditTime: 2023-03-09 12:28:42
  * @FilePath: /wework/apps/basic-item/src/stores/login.js
  */
 import { defineStore } from "pinia";
-import { $http, storage, mockWxUtils } from "utils";
+import { $http, $storage, mockWxUtils } from "utils";
 import { router } from "@/router/index.js";
 import { jsApiList } from "@/constants/jsApiList.js";
 
-const Storage = new storage();
 export const useUserInfoStore = defineStore("userInfo", {
   state: () => {
     return {
@@ -37,10 +36,10 @@ export const useUserInfoStore = defineStore("userInfo", {
           } else {
             // 存储用户信息
             this.userInfo = res;
-            Storage.setSession("wework_user_info", res);
+            $storage.setSession("wework_user_info", res);
 
             // 获取初始化路由地址
-            const redirectRouter = Storage.getSession("wework_redirect");
+            const redirectRouter = $storage.getSession("wework_redirect");
             router.replace(redirectRouter);
           }
           return res;

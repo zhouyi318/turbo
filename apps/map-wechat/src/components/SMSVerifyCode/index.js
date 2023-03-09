@@ -2,18 +2,17 @@
 /*
  * @Author: Zhou Yi
  * @Date: 2021-08-10 15:30:39
- * @LastEditors: Zhou Yi
- * @LastEditTime: 2021-08-13 10:37:12
+ * @LastEditors: mskj-zhouyi zhouyi@mskj.com
+ * @LastEditTime: 2023-03-09 12:29:33
  */
 import React, { useState } from 'react';
 import { connect } from '@cmbc/apollo';
 import { InputItem, Toast } from 'antd-mobile';
 import { msgCodeSendByMobileNew } from '@/services/query';
-import { Storage } from '@/utils';
+import { $storage } from '@/utils';
 import './styles.less';
 
 const prefixCls = 'SMSVerifyCode';
-const storage = new Storage();
 
 const SMSVerifyCode = React.forwardRef((props, ref) => {
   const {
@@ -31,9 +30,9 @@ const SMSVerifyCode = React.forwardRef((props, ref) => {
 
   const onSMSVerifyCode = () => {
     if (isLimit) {
-      const preCount = storage.get('KHST_SMSVerifyCode') || 0;
+      const preCount = $storage.get('KHST_SMSVerifyCode') || 0;
       const curCount = Number(preCount) + 1;
-      storage.set('KHST_SMSVerifyCode', curCount, limitTime);
+      $storage.set('KHST_SMSVerifyCode', curCount, limitTime);
       if (curCount > limitNumber) {
         return Toast.info('获取短信次数过多，请稍后重试！');
       }

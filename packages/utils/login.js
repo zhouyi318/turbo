@@ -2,17 +2,16 @@
  * @Author: mskj-zhouyi
  * @Date: 2023-02-03 21:21:14
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-08 21:01:17
+ * @LastEditTime: 2023-03-09 12:29:58
  * @FilePath: /wework/packages/utils/login.js
  * @Description: vant官网 - https://vant-contrib.gitee.io/vant/#/zh-CN/homeˆ
  */
 import $http from './request';
-import storage from './storage';
+import $storage from './storage';
 
 // 企业微信授权登录
 export const oAouthUrl = "https://open.weixin.qq.com/connect/oauth2/authorize";
 
-const Storage = new storage();
 
 const login = async () => {
     const {
@@ -41,7 +40,7 @@ const login = async () => {
     });
 
     // 存储应用参数
-    Storage.setSession("wework_config", { QW_CORP_ID, QW_AGENTID });
+    $storage.setSession("wework_config", { QW_CORP_ID, QW_AGENTID });
 
     // 重定向地址
     const redirectUri = encodeURIComponent(
@@ -60,7 +59,7 @@ const testLogin = async () => {
     const mcpCodeTestUrl = "http://localhost:8888/basic/home?mcpCode=36FDF7CF29C&corpid=ww51ab38ddb9f7f60d&errcode=0&agentid=1000043"
 
     // 模拟用户登录
-    Storage.setSession("wework_config", { QW_CORP_ID: "ww51ab38ddb9f7f60d", QW_AGENTID: "1000105" });
+    $storage.setSession("wework_config", { QW_CORP_ID: "ww51ab38ddb9f7f60d", QW_AGENTID: "1000105" });
     window.location.href = mcpCodeTestUrl;
 }
 

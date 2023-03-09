@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-23 10:08:23
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-08 20:55:44
+ * @LastEditTime: 2023-03-09 12:30:42
  * @FilePath: /wework/packages/utils/storage.js
  */
 /**
@@ -12,10 +12,11 @@
  * 【remove】【删除 key】【key】
 -----------------------------------------------------------------------------
  *  案例
-    const storage = new Storage();
-    storage.set("userInfo", { name: "周毅", id: "zhouyi" }, 10 ); // 10小时后过期
-    storage.get("userInfo"); // { name: "周毅", id: "zhouyi" }
-    storage.remove("userInfo");
+    import { $storage } from "utils";
+    
+    $storage.set("userInfo", { name: "周毅", id: "zhouyi" }, 10 ); // 10小时后过期
+    $storage.get("userInfo"); // { name: "周毅", id: "zhouyi" }
+    $storage.remove("userInfo");
 */
 
 class Storage {
@@ -98,5 +99,5 @@ class Storage {
         }
     }
 }
-
-export default Storage;
+const $Storage = new Storage();
+export default $Storage;

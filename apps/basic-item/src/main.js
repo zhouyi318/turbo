@@ -2,7 +2,7 @@
  * @Author: mskj-zhouyi
  * @Date: 2023-02-16 14:26:01
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-22 22:00:38
+ * @LastEditTime: 2023-03-09 11:51:57
  * @FilePath: /wework/apps/basic-item/src/main.js
  * @Description: vant官网 - https://vant-contrib.gitee.io/vant/#/zh-CN/home
  */

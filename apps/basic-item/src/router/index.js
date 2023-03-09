@@ -2,15 +2,14 @@
  * @Author: 周毅
  * @Date: 2023-02-17 14:44:33
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-08 21:04:55
+ * @LastEditTime: 2023-03-09 12:28:23
  * @FilePath: /wework/apps/basic-item/src/router/index.js
  */
 import { createRouter, createWebHistory } from "vue-router";
 import { useUserInfoStore } from "@/stores/login.js";
-import { storage } from "utils";
+import { $storage } from "utils";
 
 const Layout = () => import("@/components/Layout/index.vue");
-const Storage = new storage();
 
 const routes = [
   {
@@ -234,7 +233,7 @@ router.beforeEach((to, from) => {
 
     // 保存进入路由
     if (userInfo === "{}" && to.fullPath.indexOf("mcpCode") === -1) {
-      Storage.setSession("wework_redirect", to.fullPath);
+      $storage.setSession("wework_redirect", to.fullPath);
     }
 
     if (userInfo === "{}" && to.name !== "login") {

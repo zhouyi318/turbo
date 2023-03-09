@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-23 10:57:31
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-08 21:20:02
+ * @LastEditTime: 2023-03-09 12:28:51
  * @FilePath: /wework/apps/basic-item/src/views/check/index.vue
 -->
 
@@ -124,11 +124,10 @@
 
 <script setup>
 import { ref, watch } from "vue";
-import { storage } from "utils";
+import { $storage } from "utils";
 import { useCheckStore } from "@/stores/check.js";
 import { getImageUrl } from "@/basic-utils/index.js";
 
-const Storage = new storage();
 const store = useCheckStore();
 
 const userSN = ref("");
@@ -221,7 +220,7 @@ const getVerifyCode = () => {
 
 // 提交数据
 const onSubmit = ({ userSN, mobile, msgContent }) => {
-  const { QW_CORP_ID, QW_AGENTID } = Storage.getSession("wework_config");
+  const { QW_CORP_ID, QW_AGENTID } = $storage.getSession("wework_config");
   const params = {
     taskId: store.taskId,
     corpId: QW_CORP_ID,

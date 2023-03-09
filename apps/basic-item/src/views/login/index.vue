@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-17 16:12:16
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-08 21:07:10
+ * @LastEditTime: 2023-03-09 12:29:20
  * @FilePath: /wework/apps/basic-item/src/views/login/index.vue
 -->
 
@@ -13,14 +13,13 @@
 <script>
 import Login from "@/components/Loding/index.vue";
 import { showFailToast } from "vant";
-import { urlParams, login, storage } from "utils";
+import { urlParams, login, $storage } from "utils";
 import { useUserInfoStore } from "@/stores/login.js";
 import { jsApiList } from "@/constants/jsApiList.js";
 import { router } from "@/router/index.js";
 
 const ENV = process.env.NODE_ENV;
 const store = useUserInfoStore();
-const Storage = new storage();
 const { mcpCode, ...restProps } = urlParams(window.location.href);
 
 export default {
@@ -73,7 +72,7 @@ export default {
                     if (context.err_msg === "getContext:ok") {
                       // 入口环境
                       const entry = context.entry;
-                      Storage.setSession("wework_entry", entry);
+                      $storage.setSession("wework_entry", entry);
                       console.log("当前运行环境-", entry);
                     }
                   });
@@ -90,7 +89,7 @@ export default {
       });
     } else {
       // 当用户已经登里，返回login页面，直接跳转初始化路由地址
-      const redirectRouter = Storage.getSession("wework_redirect");
+      const redirectRouter = $storage.getSession("wework_redirect");
       router.push(redirectRouter);
     }
   },

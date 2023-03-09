@@ -1,13 +1,27 @@
+<!-- eslint-disable no-unused-vars -->
 <!--
  * @Author: mskj-zhouyi zhouyi@mskj.com
  * @Date: 2023-02-01 18:21:19
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-08 21:22:19
+ * @LastEditTime: 2023-03-09 12:29:05
  * @FilePath: /wework/apps/basic-item/src/views/home/index.vue
 -->
 <style lang="less">
 @import url("./style.less");
 </style>
+
+<script>
+// 先将需要动态引入的组件在此注册
+import MorningCard from "@/components/Card/Morning/index.vue";
+import RadarCard from "@/components/Card/Radar/index.vue";
+
+export default {
+  components: {
+    MorningCard,
+    RadarCard,
+  },
+};
+</script>
 
 <template>
   <div class="home">
@@ -56,22 +70,15 @@
     <!-- 组件面板 -->
     <div class="home-card">
       <van-row justify="space-between" gutter="15">
-        <van-col class="home-card-list" span="12">
+        <van-col
+          class="home-card-list"
+          span="12"
+          v-for="component in store.cardList"
+          :key="component.cardId"
+        >
           <div class="home-card-list-item">
-            <MorningCard />
+            <component :is="component.componentName" />
           </div>
-        </van-col>
-
-        <van-col class="home-card-list" span="12">
-          <div class="home-card-list-item">item</div>
-        </van-col>
-
-        <van-col class="home-card-list" span="12">
-          <div class="home-card-list-item">item</div>
-        </van-col>
-
-        <van-col class="home-card-list" span="12">
-          <div class="home-card-list-item">item</div>
         </van-col>
       </van-row>
     </div>
@@ -80,14 +87,12 @@
 
 <script setup>
 import { ref, reactive, onMounted } from "vue";
-import MorningCard from "@/components/Card/Morning/index.vue";
 import { useHomeStore } from "@/stores/home.js";
 import { getImageUrl } from "@/basic-utils/index.js";
 import { router } from "@/router/index.js";
-import { storage } from "utils";
+import { $storage } from "utils";
 
 const store = useHomeStore();
-const Storage = new storage();
 
 // 设置 vant swipe 下方未激活按钮颜色
 const homeThemeVars = reactive({
@@ -95,11 +100,11 @@ const homeThemeVars = reactive({
 });
 
 // 存储 swipe 当前 key 值，便于详情页返回后还原
-const swipeKey = ref(Storage.getSession("wework_swipe_key") || 0);
+const swipeKey = ref($storage.getSession("wework_swipe_key") || 0);
 
 // swipe 切页存储 Key 值
 const onChange = (key) => {
-  Storage.setSession("wework_swipe_key", key);
+  $storage.setSession("wework_swipe_key", key);
 };
 
 // 点击菜单，进入详情页
@@ -108,7 +113,10 @@ const onMues = (item) => {
 };
 
 onMounted(async () => {
-  // 菜单数据请求，避免重复请求菜单数据
+  // 菜单数据请求，避免重复
   store.menuTotal === 0 && (await store.getMenuList());
+
+  // 首页Card组件请求，避免重复
+  store.cardTotal === 0 && (await store.getCardList());
 });
 </script>

@@ -2,7 +2,7 @@
  * @Author: mskj-zhouyi
  * @Date: 2023-02-16 14:26:01
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-08 21:14:32
+ * @LastEditTime: 2023-03-09 11:03:16
  * @FilePath: /wework/apps/basic-item/mock/home.js
  * @Description: vant官网 - https://vant-contrib.gitee.io/vant/#/zh-CN/home
  */
@@ -180,10 +180,39 @@ const MenuList = {
   STATUS: "1",
 };
 
+const cardList = {
+  MSG: "交易成功",
+  cardData: {
+    cardList: [
+      {
+        cardName: "生活早报",
+        cardId: "000001",
+        cardUrl: "/morning",
+        componentName: "MorningCard",
+        cardSort: 0,
+      },
+      {
+        cardName: "客户雷达",
+        cardId: "000002",
+        cardUrl: "/customer_radar",
+        componentName: "RadarCard",
+        cardSort: 1,
+      },
+    ],
+    total: 2,
+  },
+  STATUS: "1",
+};
+
 export default [
   {
     url: "/api/showMenuList",
     method: "post",
     response: MenuList,
+  },
+  {
+    url: "/api/getCardList",
+    method: "post",
+    response: cardList,
   },
 ];
