@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-23 10:08:23
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-27 17:07:10
+ * @LastEditTime: 2023-03-08 20:55:44
  * @FilePath: /wework/packages/utils/storage.js
  */
 /**
@@ -20,12 +20,21 @@
 
 class Storage {
     constructor() {
-        this.source = window.localStorage;
+        this.local = window.localStorage;
+        this.session = window.sessionStorage;
         this.initRun();
     }
 
     remove(key) {
-        const data = this.source;
+        const data = this.local;
+        const value = data[key];
+        delete data[key];
+        delete data[`${key}__wework__`];
+        return value;
+    }
+
+    removeSession(key) {
+        const data = this.session;
         const value = data[key];
         delete data[key];
         delete data[`${key}__wework__`];
@@ -33,14 +42,20 @@ class Storage {
     }
 
     get(key) {
-        const source = this.source;
-        const expired = source[`${key}__wework__`] || Date.now() + 1;
+        const local = this.local;
+        const expired = local[`${key}__wework__`] || Date.now() + 1;
         const now = Date.now();
 
         if (now >= expired) {
             return this.remove(key);
         }
-        const value = source[key] ? JSON.parse(source[key]) : source[key];
+        const value = local[key] ? JSON.parse(local[key]) : local[key];
+        return value;
+    }
+
+    getSession(key) {
+        const session = this.session;
+        const value = session[key] ? JSON.parse(session[key]) : session[key];
         return value;
     }
 
@@ -51,23 +66,29 @@ class Storage {
          * @ param {String} value 值，
          * @ param {String} expired 过期时间，以分钟为单位，非必须
          */
-        const source = this.source;
-        source[key] = JSON.stringify(value);
+        const local = this.local;
+        local[key] = JSON.stringify(value);
         if (expired) {
-            source[`${key}__wework__`] = Date.now() + 1000 * 60 * expired;
+            local[`${key}__wework__`] = Date.now() + 1000 * 60 * expired;
         }
+        return value;
+    }
+
+    setSession(key, value) {
+        const session = this.session;
+        session[key] = JSON.stringify(value);
         return value;
     }
 
     initRun() {
         const reg = new RegExp('__wework__');
-        const source = this.source;
-        const list = Object.keys(source);
+        const local = this.local;
+        const list = Object.keys(local);
         if (list.length > 0) {
             list.map(key => {
                 if (!reg.test(key)) {
                     const now = Date.now();
-                    const expires = source[`${key}__wework__`] || Date.now() + 1;
+                    const expires = local[`${key}__wework__`] || Date.now() + 1;
                     if (now >= expires) {
                         this.remove(key);
                     }

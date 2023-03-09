@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-02-17 14:44:33
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-01 21:52:22
+ * @LastEditTime: 2023-03-08 21:04:55
  * @FilePath: /wework/apps/basic-item/src/router/index.js
  */
 import { createRouter, createWebHistory } from "vue-router";
@@ -234,7 +234,7 @@ router.beforeEach((to, from) => {
 
     // 保存进入路由
     if (userInfo === "{}" && to.fullPath.indexOf("mcpCode") === -1) {
-      Storage.set("wework_redirect", to.fullPath);
+      Storage.setSession("wework_redirect", to.fullPath);
     }
 
     if (userInfo === "{}" && to.name !== "login") {

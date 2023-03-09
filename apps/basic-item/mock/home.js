@@ -1,9 +1,9 @@
 /*
  * @Author: mskj-zhouyi
  * @Date: 2023-02-16 14:26:01
- * @LastEditors: Zhou Yi
- * @LastEditTime: 2023-02-28 22:19:53
- * @FilePath: /wework/apps/basic-item/mock/index.js
+ * @LastEditors: mskj-zhouyi zhouyi@mskj.com
+ * @LastEditTime: 2023-03-08 21:14:32
+ * @FilePath: /wework/apps/basic-item/mock/home.js
  * @Description: vant官网 - https://vant-contrib.gitee.io/vant/#/zh-CN/home
  */
 
@@ -14,142 +14,83 @@ const MenuList = {
     menuList: [
       {
         menuDescribe: "资讯早报",
-        menuUrl:
-          "https://open.weixin.qq.com/connect/oauth2/authorize?appid=ww51ab38ddb9f7f60d&redirect_uri=https%3A%2F%2Fweworkdl.cmbc.com.cn%2Fmorning%2Fbuild%2Fh5%2Findex.html%23%2F%3FTOKEN%3Dww51ab38ddb9f7f60d&response_type=code&scope=snsapi_privateinfo&agentid=1000112&state=ww51ab38ddb9f7f60d#wechat_redirect",
+        menuUrl: "/morning",
         menuId: "qywx0000",
         whiteSwitch: "0",
         menuName: "发早报",
-        menuImgUrl: "../common/assets/workbench/fzb.png",
+        menuImgUrl: "certification_menu.png",
         menuSort: 1,
       },
       {
         menuDescribe: "发产品",
-        menuUrl: "sidebar/#/pages/productStore/index?source=workbench",
+        menuUrl: "/produce",
         menuId: "qywx001",
         whiteSwitch: "0",
         menuName: "发产品",
-        menuImgUrl: "../common/assets/workbench/menuImg/fcp.png",
+        menuImgUrl: "friends_menu.png",
         menuSort: 3,
       },
       {
         menuDescribe: "客户雷达",
-        menuUrl: "/pages/radar/index/index",
+        menuUrl: "/customer_radar",
         menuId: "qywx0015",
         whiteSwitch: "0",
         menuName: "客户雷达",
-        menuImgUrl: "../common/assets/workbench/menuImg/custRadar.png",
+        menuImgUrl: "group_menu.png",
         menuSort: 7,
       },
       {
         menuDescribe: "工作提醒",
-        menuUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/webVersion/CUSTINFO/#/remind_work",
+        menuUrl: "/customer_radar",
         menuId: "qywx0018",
         whiteSwitch: "1",
         menuName: "工作提醒",
-        menuImgUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/menuicon/icon_workRemind.png",
+        menuImgUrl: "todo_menu.png",
         menuSort: 20,
       },
       {
         menuDescribe: "发资讯",
-        menuUrl: "sidebar/#/pages/sourceMaterial/index?index=0&active=0",
+        menuUrl: "/information",
         menuId: "qywx002",
         whiteSwitch: "0",
         menuName: "发资讯",
-        menuImgUrl: "../common/assets/workbench/menuImg/fzx.png",
+        menuImgUrl: "certification_menu.png",
         menuSort: 3,
       },
       {
         menuDescribe: "对公客户视图",
-        menuUrl:
-          "https://weworkdl.cmbc.com.cn/corporate-wechat/index.html#/welcome/home",
+        menuUrl: "/information",
         menuId: "qywx0020",
         whiteSwitch: "1",
         menuName: "对公视图",
-        menuImgUrl: "../common/assets/workbench/menuImg/dgst.png",
+        menuImgUrl: "certification_menu.png",
         menuSort: 5,
       },
       {
-        menuDescribe: "数字员工",
-        menuUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/webVersion/CUSTINFO/#/digital_employees",
-        menuId: "qywx0022",
-        whiteSwitch: "1",
-        menuName: "数字员工",
-        menuImgUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/menuicon/digitalEmployees.png",
-        menuSort: 22,
-      },
-      {
-        menuDescribe: "手动认证客户（管理员）",
-        menuUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/webVersion/CUSTINFO/#/search_identity",
-        menuId: "qywx0023",
-        whiteSwitch: "1",
-        menuName: "手动认证(超管)",
-        menuImgUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/menuicon/customerIdentityAuth.png",
-        menuSort: 23,
-      },
-      {
-        menuDescribe: "客户互换调整",
-        menuUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/webVersion/CUSTINFO/#/customer_exchange",
-        menuId: "qywx0024",
-        whiteSwitch: "1",
-        menuName: "客户互换",
-        menuImgUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/menuicon/custExchange.png",
-        menuSort: 25,
-      },
-      {
-        menuDescribe: "离职管理",
-        menuUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/webVersion/CUSTINFO/#/staff_manage",
-        menuId: "qywx0026",
-        whiteSwitch: "1",
-        menuName: "离职管理",
-        menuImgUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/menuicon/delStaffManage.png",
-        menuSort: 26,
-      },
-      {
-        menuDescribe: "强制解除绑定关系",
-        menuUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/webVersion/CUSTINFO/#/forcibly_unbind",
-        menuId: "qywx0028",
-        whiteSwitch: "1",
-        menuName: "强制解绑",
-        menuImgUrl:
-          "https://mmaqw.cmbc.com.cn:8190/files/mmaqw/menuicon/forciblyUnbind.png",
-        menuSort: 28,
-      },
-      {
         menuDescribe: "发海报",
-        menuUrl: "sidebar/#/pages/sourceMaterial/index?index=1&active=1",
+        menuUrl: "/poster",
         menuId: "qywx003",
         whiteSwitch: "0",
         menuName: "发海报",
-        menuImgUrl: "../common/assets/workbench/menuImg/fhb.png",
+        menuImgUrl: "friends_menu.png",
         menuSort: 4,
       },
       {
         menuDescribe: "BETA早报",
-        menuUrl: "BETA",
+        menuUrl: "/BETA",
         menuId: "qywx0030",
         whiteSwitch: "0",
         menuName: "财经早报",
-        menuImgUrl: "../common/assets/workbench/menuImg/beta.png",
+        menuImgUrl: "todo_menu.png",
         menuSort: 2,
       },
       {
         menuDescribe: "我的任务",
-        menuUrl: "/pages/myTask/index/index",
+        menuUrl: "/my_task",
         menuId: "qywx004",
         whiteSwitch: "0",
         menuName: "我的任务",
-        menuImgUrl: "../common/assets/workbench/menuImg/wdrw.png",
+        menuImgUrl: "certification_menu.png",
         menuSort: 13,
       },
       {
@@ -158,7 +99,7 @@ const MenuList = {
         menuId: "qywx005",
         whiteSwitch: "0",
         menuName: "企微客户",
-        menuImgUrl: "../common/assets/workbench/menuImg/qwkh.png",
+        menuImgUrl: "certification_menu.png",
         menuSort: 5,
       },
       {
@@ -167,7 +108,7 @@ const MenuList = {
         menuId: "qywx006",
         whiteSwitch: "0",
         menuName: "流失客户",
-        menuImgUrl: "../common/assets/workbench/menuImg/lskh.png",
+        menuImgUrl: "certification_menu.png",
         menuSort: 6,
       },
       {
@@ -176,7 +117,7 @@ const MenuList = {
         menuId: "qywx007",
         whiteSwitch: "0",
         menuName: "企微群聊",
-        menuImgUrl: "../common/assets/workbench/menuImg/qwql.png",
+        menuImgUrl: "certification_menu.png",
         menuSort: 11,
       },
       {
@@ -185,7 +126,7 @@ const MenuList = {
         menuId: "qywx008",
         whiteSwitch: "0",
         menuName: "一键拉群",
-        menuImgUrl: "../common/assets/workbench/menuImg/yjlq.png",
+        menuImgUrl: "certification_menu.png",
         menuSort: 10,
       },
       {
@@ -194,7 +135,7 @@ const MenuList = {
         menuId: "qywx009",
         whiteSwitch: "0",
         menuName: "待办事项",
-        menuImgUrl: "../common/assets/workbench/menuImg/dbsx.png",
+        menuImgUrl: "todo_menu.png",
         menuSort: 14,
       },
       {
@@ -203,7 +144,7 @@ const MenuList = {
         menuId: "qywx010",
         whiteSwitch: "0",
         menuName: "历史朋友圈",
-        menuImgUrl: "../common/assets/workbench/menuImg/pyq.png",
+        menuImgUrl: "todo_menu.png",
         menuSort: 15,
       },
       {
@@ -212,7 +153,7 @@ const MenuList = {
         menuId: "qywx011",
         whiteSwitch: "0",
         menuName: "添加管户好友",
-        menuImgUrl: "../common/assets/workbench/menuImg/addFriend.png",
+        menuImgUrl: "todo_menu.png",
         menuSort: 7,
       },
       {
@@ -221,7 +162,7 @@ const MenuList = {
         menuId: "qywx012",
         whiteSwitch: "0",
         menuName: "员工身份信息",
-        menuImgUrl: "../common/assets/workbench/menuImg/identification.png",
+        menuImgUrl: "todo_menu.png",
         menuSort: 13,
       },
       {
@@ -230,11 +171,11 @@ const MenuList = {
         menuId: "qywx013",
         whiteSwitch: "0",
         menuName: "手动认证客户",
-        menuImgUrl: "../common/assets/workbench/menuImg/auth.png",
+        menuImgUrl: "todo_menu.png",
         menuSort: 8,
       },
     ],
-    total: 23,
+    total: 20,
   },
   STATUS: "1",
 };

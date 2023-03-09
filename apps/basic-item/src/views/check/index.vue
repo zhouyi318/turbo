@@ -2,9 +2,13 @@
  * @Author: 周毅
  * @Date: 2023-02-23 10:57:31
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-27 22:58:20
+ * @LastEditTime: 2023-03-08 21:20:02
  * @FilePath: /wework/apps/basic-item/src/views/check/index.vue
 -->
+
+<style lang="less">
+@import "./style.less";
+</style>
 
 <template>
   <div class="check">
@@ -217,7 +221,7 @@ const getVerifyCode = () => {
 
 // 提交数据
 const onSubmit = ({ userSN, mobile, msgContent }) => {
-  const { QW_CORP_ID, QW_AGENTID } = Storage.get("wework_config");
+  const { QW_CORP_ID, QW_AGENTID } = Storage.getSession("wework_config");
   const params = {
     taskId: store.taskId,
     corpId: QW_CORP_ID,
@@ -239,7 +243,3 @@ const onSubmit = ({ userSN, mobile, msgContent }) => {
   });
 };
 </script>
-
-<style lang="less">
-@import "./style.less";
-</style>

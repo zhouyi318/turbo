@@ -2,7 +2,7 @@
  * @Author: mskj-zhouyi
  * @Date: 2023-02-03 21:21:14
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-02-27 18:17:53
+ * @LastEditTime: 2023-03-08 21:01:17
  * @FilePath: /wework/packages/utils/login.js
  * @Description: vant官网 - https://vant-contrib.gitee.io/vant/#/zh-CN/homeˆ
  */
@@ -41,7 +41,7 @@ const login = async () => {
     });
 
     // 存储应用参数
-    Storage.set("wework_config", { QW_CORP_ID, QW_AGENTID });
+    Storage.setSession("wework_config", { QW_CORP_ID, QW_AGENTID });
 
     // 重定向地址
     const redirectUri = encodeURIComponent(
@@ -60,7 +60,7 @@ const testLogin = async () => {
     const mcpCodeTestUrl = "http://localhost:8888/basic/home?mcpCode=36FDF7CF29C&corpid=ww51ab38ddb9f7f60d&errcode=0&agentid=1000043"
 
     // 模拟用户登录
-    Storage.set("wework_config", { QW_CORP_ID: "ww51ab38ddb9f7f60d", QW_AGENTID: "1000105" });
+    Storage.setSession("wework_config", { QW_CORP_ID: "ww51ab38ddb9f7f60d", QW_AGENTID: "1000105" });
     window.location.href = mcpCodeTestUrl;
 }
 

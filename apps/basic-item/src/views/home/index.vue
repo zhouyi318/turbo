@@ -2,36 +2,113 @@
  * @Author: mskj-zhouyi zhouyi@mskj.com
  * @Date: 2023-02-01 18:21:19
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-01 22:24:59
+ * @LastEditTime: 2023-03-08 21:22:19
  * @FilePath: /wework/apps/basic-item/src/views/home/index.vue
 -->
+<style lang="less">
+@import url("./style.less");
+</style>
+
 <template>
   <div class="home">
-    <div class="home-nodata" v-if="store.menuTotal === 0">HHHHHHH</div>
+    <!-- 菜单请求骨架屏 -->
+    <div class="home-nodata" v-if="store.menuTotal === 0">
+      <van-skeleton title :row="5" />
+    </div>
+    <!-- 菜单面板 -->
     <div class="home-header" v-else>
-      <van-swipe
-        class="home-header-swipe"
-        indicator-color="white"
-        :loop="false"
-      >
-        <van-swipe-item>2</van-swipe-item>
-        <van-swipe-item>3</van-swipe-item>
-        <van-swipe-item>4</van-swipe-item>
-      </van-swipe>
+      <div class="home-header-bg" />
+      <div class="home-header-main">
+        <van-config-provider :theme-vars="homeThemeVars">
+          <van-swipe
+            class="home-header-main-swipe"
+            indicator-color="#1989fa"
+            :loop="false"
+            :initial-swipe="swipeKey"
+            @change="onChange"
+          >
+            <van-swipe-item
+              v-for="(item, index) in store.menuCardNumber"
+              :key="index"
+            >
+              <van-row gutter="6" align="center">
+                <van-col
+                  class="home-header-main-swipe-card"
+                  span="6"
+                  v-for="(_item, _index) in item"
+                  :key="index + _ + _index"
+                >
+                  <div
+                    class="home-header-main-swipe-card-item"
+                    :key="_item.menuId"
+                    @click.stop="onMues(_item)"
+                  >
+                    <img :src="getImageUrl(_item.menuImgUrl)" alt="menu" />
+                    <div>{{ _item.menuName }}</div>
+                  </div>
+                </van-col>
+              </van-row>
+            </van-swipe-item>
+          </van-swipe>
+        </van-config-provider>
+      </div>
+    </div>
+    <!-- 组件面板 -->
+    <div class="home-card">
+      <van-row justify="space-between" gutter="15">
+        <van-col class="home-card-list" span="12">
+          <div class="home-card-list-item">
+            <MorningCard />
+          </div>
+        </van-col>
+
+        <van-col class="home-card-list" span="12">
+          <div class="home-card-list-item">item</div>
+        </van-col>
+
+        <van-col class="home-card-list" span="12">
+          <div class="home-card-list-item">item</div>
+        </van-col>
+
+        <van-col class="home-card-list" span="12">
+          <div class="home-card-list-item">item</div>
+        </van-col>
+      </van-row>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, reactive, onMounted } from "vue";
+import MorningCard from "@/components/Card/Morning/index.vue";
 import { useHomeStore } from "@/stores/home.js";
+import { getImageUrl } from "@/basic-utils/index.js";
+import { router } from "@/router/index.js";
+import { storage } from "utils";
 
 const store = useHomeStore();
+const Storage = new storage();
+
+// 设置 vant swipe 下方未激活按钮颜色
+const homeThemeVars = reactive({
+  swipeIndicatorInactiveBackground: "#333",
+});
+
+// 存储 swipe 当前 key 值，便于详情页返回后还原
+const swipeKey = ref(Storage.getSession("wework_swipe_key") || 0);
+
+// swipe 切页存储 Key 值
+const onChange = (key) => {
+  Storage.setSession("wework_swipe_key", key);
+};
+
+// 点击菜单，进入详情页
+const onMues = (item) => {
+  router.push(item.menuUrl);
+};
+
 onMounted(async () => {
+  // 菜单数据请求，避免重复请求菜单数据
   store.menuTotal === 0 && (await store.getMenuList());
 });
 </script>
-
-<style lang="less">
-@import url("./style.less");
-</style>
