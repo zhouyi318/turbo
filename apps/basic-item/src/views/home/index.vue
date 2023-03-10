@@ -3,7 +3,7 @@
  * @Author: mskj-zhouyi zhouyi@mskj.com
  * @Date: 2023-02-01 18:21:19
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-09 12:29:05
+ * @LastEditTime: 2023-03-10 15:04:06
  * @FilePath: /wework/apps/basic-item/src/views/home/index.vue
 -->
 <style lang="less">
@@ -14,11 +14,15 @@
 // 先将需要动态引入的组件在此注册
 import MorningCard from "@/components/Card/Morning/index.vue";
 import RadarCard from "@/components/Card/Radar/index.vue";
+import ClientCard from "@/components/Card/Client/index.vue";
+import TodoCard from "@/components/Card/Todo/index.vue";
 
 export default {
   components: {
     MorningCard,
     RadarCard,
+    ClientCard,
+    TodoCard,
   },
 };
 </script>

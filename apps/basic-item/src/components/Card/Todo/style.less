@@ -1,0 +1,41 @@
+/*
+ * @Author: 周毅
+ * @Date: 2023-03-10 14:19:38
+ * @LastEditors: mskj-zhouyi zhouyi@mskj.com
+ * @LastEditTime: 2023-03-10 15:43:00
+ * @FilePath: /wework/apps/basic-item/src/components/Card/Todo/style.less
+ */
+ .todo-card {
+  box-sizing: border-box;
+
+  &-nodata {
+    padding: 10px 0;
+  }
+
+  &-main {
+    &-title {
+      padding: 15px 4px 10px 4px;
+      display: flex;
+
+      img {
+        width: 60px;
+      }
+    }
+
+    &-list {
+      padding: 0 10px 10px;
+
+      div {
+        height: 70px;
+        line-height: 70px;
+        cursor: pointer;
+
+        >span {
+          font-size: 18px;
+          font-weight: 500;
+          color: rgba(255, 0, 0, 0.841);
+        }
+      }
+    }
+  }
+}

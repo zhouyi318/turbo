@@ -2,7 +2,7 @@
  * @Author: 周毅
  * @Date: 2023-03-01 15:36:01
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-09 10:52:07
+ * @LastEditTime: 2023-03-10 14:49:33
  * @FilePath: /wework/apps/basic-item/src/stores/home.js
  */
 import { defineStore } from "pinia";
@@ -18,6 +18,8 @@ export const useHomeStore = defineStore("home", {
       // 首页Card数据
       cardList: [],
       cardTotal: 0,
+      // 首页企微客户与代办
+      myDeskCard: {},
     };
   },
   actions: {
@@ -51,6 +53,15 @@ export const useHomeStore = defineStore("home", {
           let total = res?.cardData?.total || 0;
           this.cardList = data;
           this.cardTotal = total;
+        });
+    },
+    getMyDesk(props) {
+      return $http
+        .post("/getMyDesk", {
+          ...props,
+        })
+        .then((res) => {
+          this.myDeskCard = res;
         });
     },
   },

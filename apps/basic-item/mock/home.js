@@ -2,7 +2,7 @@
  * @Author: mskj-zhouyi
  * @Date: 2023-02-16 14:26:01
  * @LastEditors: mskj-zhouyi zhouyi@mskj.com
- * @LastEditTime: 2023-03-09 11:03:16
+ * @LastEditTime: 2023-03-10 15:03:30
  * @FilePath: /wework/apps/basic-item/mock/home.js
  * @Description: vant官网 - https://vant-contrib.gitee.io/vant/#/zh-CN/home
  */
@@ -187,21 +187,45 @@ const cardList = {
       {
         cardName: "生活早报",
         cardId: "000001",
-        cardUrl: "/morning",
         componentName: "MorningCard",
         cardSort: 0,
       },
       {
         cardName: "客户雷达",
         cardId: "000002",
-        cardUrl: "/customer_radar",
         componentName: "RadarCard",
         cardSort: 1,
       },
+      {
+        cardName: "企微好友",
+        cardId: "000003",
+        componentName: "ClientCard",
+        cardSort: 2,
+      },
+      {
+        cardName: "代办任务",
+        cardId: "000004",
+        componentName: "TodoCard",
+        cardSort: 2,
+      },
     ],
-    total: 2,
+    total: 3,
   },
   STATUS: "1",
+};
+
+const myDesk = {
+  MSG: "交易成功",
+  WECHAT_ADD_TODAY: 0,
+  STATUS: "1",
+  INVERSION_RATE: "0%",
+  CUST_TO_BE_ADDED: 0,
+  WECHAT_ALL_NUM: 19,
+  WECHAT_LOSS_TODAY: 0,
+  TASK_TO_DO: 0,
+  TODAY_TO_DO: 0,
+  BUSI_FOLLOW_UP: 0,
+  CUST_ADDED_WECHAT: "0",
 };
 
 export default [
@@ -214,5 +238,10 @@ export default [
     url: "/api/getCardList",
     method: "post",
     response: cardList,
+  },
+  {
+    url: "/api/getMyDesk",
+    method: "post",
+    response: myDesk,
   },
 ];
